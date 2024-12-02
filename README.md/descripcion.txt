@@ -1,0 +1,19 @@
+El tema principal de la página web trata sobre Padel. 
+
+Para ello tenemos la página principal compuesta por el index.html, de donde se ramifica en los demás htmls, 
+como pueden ser instalaciones.html, reservas.html, productos.html, galería.html y contactos.html.
+
+Dentro de la página principal nos podremos encontrar una breve información sobre nuestro club de padel. En ella explicaremos qué somos,
+quén es nuestro equipo y las diferentes opciones que ofrecemos, como puede ser las clases de padel, en el que al final del index.html
+habrá un enlacepara as tarifas y un pequeño video tutorial sobre los golpes y las tácticas más básicas del deporte. 
+
+Seguimos recorriendo las demás páginas y nos encontramos con las instaaciones, donde explicaremos un poco cuáles son nuestras instalaciones 
+y los servicios que ofrecemos en nuestro club. 
+
+Luego encontraremos una pequeña tienda en productos.html que dispondrá de los materiales necesarios para practicar este deporte, 
+como pueden ser palas, ropa, zapatillas, bolas...
+
+En galeria.html veremos una serie de enlaces y vídeos de interés sobre las diferentes competiciones en el mundo del padel, 
+el ranking actualmente y varias entrevistas y puntos en este deprote.
+
+Por último, tendremos la página de contactos, en la que ofrecemos cómo podéis contactar con nosotros para cualquier tipo de dudas. 

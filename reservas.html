@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MasquePadel-Reservas</title>
+    <meta name="description" content="Club de padel en Sevilla">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/reservas.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <script src="js/reservas.js"></script>
+    <script src="js/menu.js"></script>
+</head>
+<body>
+    <header class="reservas">
+        <div class="overlay">
+            <div class="menu container">
+                <div>
+                    <a href="index.html" class="logo">MasquePadel</a>
+                </div>
+                <button onclick="myFunction()" class="menu-responsive">Menú</button>
+                <nav id="mi-menu" class="navbar">
+                    <ul>
+                        <li><a class="indexlink" href="index.html">Inicio</a></li>
+                        <li><a class="indexlink" href="instalaciones.html">Instalaciones</a></li>
+                        <li><a class="indexlink" href="reservas.html">Reserva Pistas</a></li>
+                        <li><a class="indexlink" href="productos.html">Productos</a></li>
+                        <li><a class="indexlink" href="galeria.html">Galería</a></li>
+                        <li><a class="indexlink" href="contacto.html">Contacto</a></li>
+                    </ul>
+                </nav>
+            </div>
+            
+            <div class="header-content container">
+
+                <div class="header-txt">
+                    <h1>Reservas</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+<div class="container">
+    <div class="cuadro-precios">
+        <div class="caja-precios">
+            <table>
+                <tr>
+                    <th colspan="3">Pistas Interiores</th>
+                </tr>
+                <tr>
+                    <td>Abonados</td>
+                    <td>Invitados alumnos</td>
+                    <td>No abonado</td>
+                </tr>
+                <tr>
+                    <th colspan="3">MAÑANAS HASTA 14:30 H</th>
+                </tr>
+                <tr>
+                    <th colspan="3">Lunes a Viernes</th>
+                </tr>
+                <tr>
+                    <td>2.50€</td>
+                    <td>3.50€</td>
+                    <td>4.50€</td>
+                </tr>
+                <tr>
+                    <th colspan="3">TARDES A PARTIR DE 14:30 H</th>
+                </tr>
+                <tr>
+                    <th colspan="3">Lunes a Viernes</th>
+                </tr>
+                <tr>
+                    <td>3€</td>
+                    <td>4.50€</td>
+                    <td>6.00€</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="caja-precios2">
+            <table>
+                <tr>
+                    <th colspan="3">Pistas Exteriores</th>
+                </tr>
+                <tr>
+                    <td>Abonados</td>
+                    <td>Invitados alumnos</td>
+                    <td>No abonado</td>
+                </tr>
+                <tr>
+                    <th colspan="3">MAÑANAS HASTA 14:30 H</th>
+                </tr>
+                <tr>
+                    <th colspan="3">Lunes a Viernes</th>
+                </tr>
+                <tr>
+                    <td>1.00€</td>
+                    <td>2.00€</td>
+                    <td>3.00€</td>
+                </tr>
+                <tr>
+                    <th colspan="3">TARDES A PARTIR DE 14:30 H</th>
+                </tr>
+                <tr>
+                    <th colspan="3">Lunes a Viernes <b style="color: #27A4F2;">+3.20€ de luz</b></th>
+                </tr>
+                <tr>
+                    <td>1.00€</td>
+                    <td>2.50€</td>
+                    <td>3.50€</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="reserva-pistas">
+        <h2>Reservas de Pistas de Pádel</h2>
+        <div class="tabla-container">
+            <table>
+                <tr>
+                    <th></th>
+                    <th colspan="7" bgcolor="red">Pistas Interiores</th>
+                </tr>
+                <tr>
+                    <th>Hora</th>
+                    <th>Lunes</th>
+                    <th>Martes</th>
+                    <th>Miércoles</th>
+                    <th>Jueves</th>
+                    <th>Viernes</th>
+                    <th>Sábado</th>
+                    <th>Domingo</th>
+                </tr>
+                <tr>
+                    <td>10:00 - 11:30</td>
+                    <td class="available" onclick="reservar">Disponible</td>
+                    <td class="reserved">Reservado</td>
+                    <td class="reserved">Reservado</td>
+                    <td class="available" onclick="reservar">Disponible</td>
+                    <td class="reserved">Reservado</td>
+                    <td class="available" onclick="reservar">Disponible</td>
+                    <td class="available" onclick="reservar">Disponible</td>
+                </tr>
+                <tr>
+                    <td>11:30 - 13:00</td>
+                    <td class="reserved">Reservado</td>
+                    <td class="available" onclick="reservar">Disponible</td>
+                    <td class="reserved">Reservado</td>
+                    <td class="available" onclick="reservar">Disponible</td>
+                    <td class="reserved">Reservado</td>
+                    <td class="reserved">Reservado</td>
+                    <td class="reserved">Reservado</td>
+                </tr>
+                <tr>
+                    <td>13:00 - 14:30</td>
+                    <td class="available" onclick="reservar">Disponible</td>
+                    <td class="reserved">Reservado</td>
+                    <td class="reserved">Reservado</td>
+                    <td class="reserved">Reservado</td>
+                    <td class="available" onclick="reservar">Disponible</td>
+                    <td class="available" onclick="reservar">Disponible</td>
+                    <td class="available" onclick="reservar">Disponible</td>
+                </tr>
+
+                <tr>
+                    <td>17:00 - 18:30</td>
+                    <td class="reserved">Reservado</td>
+                    <td class="available" onclick="reservar">Disponible</td>
+                    <td class="reserved">Reservado</td>
+                    <td class="available" onclick="reservar">Disponible</td>
+                    <td class="reserved">Reservado</td>
+                    <td class="reserved">Reservado</td>
+                    <td class="reserved">Reservado</td>
+                </tr>
+                <tr>
+                    <td>18:30 - 20:00</td>
+                    <td class="reserved">Reservado</td>
+                    <td class="available" onclick="reservar">Disponible</td>
+                    <td class="reserved">Reservado</td>
+                    <td class="available" onclick="reservar">Disponible</td>
+                    <td class="reserved">Reservado</td>
+                    <td class="available" onclick="reservar">Disponible</td>
+                    <td class="reserved">Reservado</td>
+                </tr>
+                <tr>
+                    <td>20:00 - 21:30</td>
+                    <td class="reserved">Reservado</td>
+                    <td class="reserved">Reservado</td>
+                    <td class="reserved">Reservado</td>
+                    <td class="reserved">Reservado</td>
+                    <td class="reserved">Reservado</td>
+                    <td class="reserved">Reservado</td>
+                    <td class="reserved">Reservado</td>
+                </tr>
+                <tr>
+                    <td>21:30 - 23:00</td>
+                    <td class="reserved">Reservado</td>
+                    <td class="reserved">Reservado</td>
+                    <td class="available" onclick="reservar">Disponible</td>
+                    <td class="reserved">Reservado</td>
+                    <td class="reserved">Reservado</td>
+                    <td class="reserved">Reservado</td>
+                    <td class="available" onclick="reservar">Disponible</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="tabla-container">
+            <table>
+                <tr>
+                    <th></th>
+                    <th colspan="7" bgcolor="red">Pistas Exteriores</th>
+                </tr>
+                <tr>
+                    <th>Hora</th>
+                    <th>Lunes</th>
+                    <th>Martes</th>
+                    <th>Miércoles</th>
+                    <th>Jueves</th>
+                    <th>Viernes</th>
+                    <th>Sábado</th>
+                    <th>Domingo</th>
+                </tr>
+                <tr>
+                    <td>10:00 - 11:30</td>
+                    <td class="available" onclick= "reservar('reservar')">Disponible</td>
+                    <td class="reserved">Reservado</td>
+                    <td class="reserved">Reservado</td>
+                    <td class="available" onclick= "reservar('reservar')">Disponible</td>
+                    <td class="reserved">Reservado</td>
+                    <td class="available" onclick= "reservar('reservar')">Disponible</td>
+                    <td class="available" onclick= "reservar('reservar')">Disponible</td>
+                </tr>
+                <tr>
+                    <td>11:30 - 13:00</td>
+                    <td class="reserved">Reservado</td>
+                    <td class="available" onclick= "reservar('reservar')">Disponible</td>
+                    <td class="reserved">Reservado</td>
+                    <td class="available" onclick= "reservar('reservar')">Disponible</td>
+                    <td class="reserved">Reservado</td>
+                    <td class="reserved">Reservado</td>
+                    <td class="reserved">Reservado</td>
+                </tr>
+                <tr>
+                    <td>13:00 - 14:30</td>
+                    <td class="available" onclick= "reservar('reservar')">Disponible</td>
+                    <td class="reserved">Reservado</td>
+                    <td class="reserved">Reservado</td>
+                    <td class="reserved">Reservado</td>
+                    <td class="available" onclick= "reservar('reservar')">Disponible</td>
+                    <td class="available" onclick= "reservar('reservar')">Disponible</td>
+                    <td class="available" onclick= "reservar('reservar')">Disponible</td>
+                </tr>
+
+                <tr>
+                    <td>17:00 - 18:30</td>
+                    <td class="reserved">Reservado</td>
+                    <td class="available" onclick= "reservar('reservar')">Disponible</td>
+                    <td class="reserved">Reservado</td>
+                    <td class="available" onclick= "reservar('reservar')">Disponible</td>
+                    <td class="reserved">Reservado</td>
+                    <td class="reserved">Reservado</td>
+                    <td class="reserved">Reservado</td>
+                </tr>
+                <tr>
+                    <td>18:30 - 20:00</td>
+                    <td class="reserved">Reservado</td>
+                    <td class="available" onclick= "reservar('reservar')">Disponible</td>
+                    <td class="reserved">Reservado</td>
+                    <td class="available" onclick= "reservar('reservar')">Disponible</td>
+                    <td class="reserved">Reservado</td>
+                    <td class="available" onclick= "reservar('reservar')">Disponible</td>
+                    <td class="reserved">Reservado</td>
+                </tr>
+                <tr>
+                    <td>20:00 - 21:30</td>
+                    <td class="reserved">Reservado</td>
+                    <td class="reserved">Reservado</td>
+                    <td class="reserved">Reservado</td>
+                    <td class="reserved">Reservado</td>
+                    <td class="reserved">Reservado</td>
+                    <td class="reserved">Reservado</td>
+                    <td class="reserved">Reservado</td>
+                </tr>
+                <tr>
+                    <td>21:30 - 23:00</td>
+                    <td class="reserved">Reservado</td>
+                    <td class="reserved">Reservado</td>
+                    <td class="available" onclick= "reservar('reservar')">Disponible</td>
+                    <td class="reserved">Reservado</td>
+                    <td class="reserved">Reservado</td>
+                    <td class="reserved">Reservado</td>
+                    <td class="available" onclick= "reservar('reservar')">Disponible</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+   
+<footer class="footer container">
+
+    <h2>Contáctanos</h2>
+
+    <form>
+        <input class="campo" type="text" placeholder="Nombre (obligatorio)" required >
+        <input class="campo" type="text" placeholder="Apellidos (obligatorio)" required><br>
+        <input class="campo" type="tel" placeholder="Teléfono">
+        <input class="campo" type="email" placeholder="email (obligatorio)" required><br>
+        <input type="checkbox" id="aceptar" name="aceptar" value="Acepta la política de privacidad" required>
+        <label for="aceptar" >Acepto la política de privacidad</label><br>
+        <input class="btn-2" type="submit" value="Enviar">
+    </form>
+    <div class="footer-txt">
+        <p>Dirección - teléfono - redes sociales - <a href="mailto:masquepadel@masquepadel.com">email</a>
+        </p>
+        <p>Facebook - <a href="instagram" target="_blank">Instagram</a></p>
+    </div>
+
+</footer>
+
+</body>
+</html>

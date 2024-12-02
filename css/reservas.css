@@ -1,0 +1,111 @@
+.reservas {
+    background-image: url(../images/img/pistas-padel-reserva.jpg); /* Imagen de fondo */
+    background-position: center bottom; 
+    background-repeat: no-repeat; /* No repetir la imagen */
+    background-size: cover; /* Hacer que la imagen cubra todo el fondo */
+}
+
+
+.caja-precios td, .caja-precios2 td {
+    border: 2px solid black; /* Borde negro de 2px */
+    padding: 10px; /* Espaciado interno de 10px */
+    width: 200px; /* Ancho fijo de 200px */
+    text-align: center; /* Centrar el texto */
+    margin: 0 auto; /* Centrar las celdas horizontalmente */
+    margin-top: 5px; /* Margen superior de 5px */
+}
+
+
+.caja-precios, .caja-precios2 {
+    margin-bottom: 100px; /* Margen inferior de 100px */
+    margin-top: 50px; /* Margen superior de 50px */
+    display: flex; /* Utilizar flexbox para la disposición */
+    justify-content: space-between; 
+    border-collapse: collapse; /* Colapsar bordes */
+    width: 45%; /* Ancho del 45% del contenedor */
+    margin: 10px; /* Margen alrededor del contenedor */
+    height: 300px; /* Altura fija de 300px */
+}
+
+
+.caja-precios {
+    float: left; /* Flotar a la izquierda */
+}
+
+
+.caja-precios2 {
+    float: right; /* Flotar a la derecha */
+}
+
+
+.cuadro-precios {
+    border: 1px solid black; /* Borde negro de 1px */
+    padding: 20px; /* Espaciado interno de 20px */
+    margin-bottom: 40px; 
+    margin-top: 20px; 
+    display: inline-block; /* Mostrar como bloque en línea */
+}
+
+
+.reserva-pistas {
+    padding: 20px; /* Espaciado interno de 20px */
+    margin: 20px 0; 
+    display: flex; /* Utilizar flexbox para la disposición */
+    flex-direction: column; /* Organizar elementos en una columna */
+    align-items: center; /* Centrar elementos horizontalmente */
+}
+
+
+.reserva-pistas h2 {
+    margin-bottom: 20px; 
+    color: #27A4F2; /* Color del texto */
+    text-align: center;
+}
+
+
+.tabla-container {
+    width: 100%; /* Ancho completo */
+    display: flex; /* Utilizar flexbox para la disposición */
+    justify-content: center; /* Centrar horizontalmente el contenido */
+}
+
+
+.reserva-pistas table {
+    width: 100%; /* Ancho completo */
+    max-width: 1200px; /* Ancho máximo de 1200px */
+    border-collapse: collapse; /* Colapsar bordes */
+    margin-bottom: 40px; 
+}
+
+
+.reserva-pistas th, .reserva-pistas td {
+    padding: 10px; /* Espaciado interno de 10px */
+    text-align: center; /* Centrar el texto */
+    border: 1px solid black; /* Borde negro de 1px */
+}
+
+
+.reserva-pistas th {
+    background-color: #B4B4B4; /* Fondo */
+    color: white; /* Texto blanco */
+}
+
+
+.reserved {
+    background-color: #ff6b6b; /* Fondo */
+    color: white; /* Texto blanco */
+}
+
+
+.available {
+    background-color: #a8e6cf; /* Fondo */
+    cursor: pointer; /* Cambiar el cursor a una mano */
+}
+
+
+.available:hover {
+    background-color: #81c784; /* Fondo */
+}
+
+
+ 

@@ -1,0 +1,31 @@
+header.contacto{
+    background-image: url(../images/img/foto-contacto-fondo.jpg); /*imagen del encabezado*/
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-size: cover; /*cubrir todo el fondo*/
+}
+
+.contacto-txt{
+    background-color: #000000;
+    color: #FFFFFF;
+    padding: 40px;
+    float: left; /*posición a la izquierda*/
+    margin-top: 50px;
+}
+
+.contacto-txt ul{
+    margin-bottom: 10px;
+}
+
+.contacto-txt li{
+    margin-top: 10px;
+}
+
+.tabla-contacto{
+    background-color: orangered;
+    padding: 40px;
+    margin: 0 auto;
+    float: right; /*posición a la derecha*/
+    margin-bottom: 100px;
+    margin-top: 50px;
+}

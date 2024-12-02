@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MasquePadel-Contacto</title>
+    <meta name="description" content="Club de padel en Sevilla">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/contacto.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <script src="js/menu.js"></script>
+</head>
+<body>
+    <header class="contacto">
+        <div class="overlay">
+            <div class="menu container">
+                <div>
+                    <a href="index.html" class="logo">MasquePadel</a>
+                </div>
+                <button onclick="myFunction()" class="menu-responsive">Menú</button>
+                <nav id="mi-menu" class="navbar">
+                    <ul>
+                        <li><a class="indexlink" href="index.html">Inicio</a></li>
+                        <li><a class="indexlink" href="instalaciones.html">Instalaciones</a></li>
+                        <li><a class="indexlink" href="reservas.html">Reserva Pistas</a></li>
+                        <li><a class="indexlink" href="productos.html">Productos</a></li>
+                        <li><a class="indexlink" href="galeria.html">Galería</a></li>
+                        <li><a class="indexlink" href="contacto.html">Contacto</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="header-content container">
+
+                <div class="header-txt">
+                    <h1>Contacto</h1>
+                    <p>
+                        Os invitamos a formar parte de este proyecto colaborando en todo lo que deseéis, 
+                y aportando todas las ideas y sugerencias que se os ocurran.
+                ¡Nos vemos en las pistas!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="contacto-txt">
+            <p>
+                <ul>
+                    <li><strong>EMAIL</strong></li>
+                    <li><a href="mailto:masquepadel@masquepadel.com">masquepadel@masquepadel.com</a></li>
+                    <li><strong>TELÉFONOS</strong></li>
+                    <li>954 895 123</li>
+                    <li>435 678 234</li>
+                    <li><strong>DIRECCIÓN</strong></li>
+                    <li>Direccion, sevilla</li>
+                </ul>
+            </p>
+        </div>
+        <div class="tabla-contacto">
+            <form>
+                <input class="campo" type="text" placeholder="Nombre (obligatorio)" required >
+                <input class="campo" type="text" placeholder="Apellidos (obligatorio)" required><br>
+                <input class="campo" type="tel" placeholder="Teléfono">
+                <input class="campo" type="email" placeholder="email (obligatorio)" required><br>
+                <input type="checkbox" id="aceptar" name="aceptar" value="Acepta la política de privacidad" required>
+                <label for="aceptar" >Acepto la política de privacidad</label><br>
+                <input class="btn-2" type="submit" value="Enviar">
+            </form>
+        </div>
+    </div>
+
+    
+
+    
+</body>
+</html>

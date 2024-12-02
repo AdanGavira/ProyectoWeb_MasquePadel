@@ -1,0 +1,54 @@
+.header-instalaciones{
+    background-image: url(../images/img/foto-fondo-instalaciones2.jpeg); /* Imagen de fondo */
+}
+
+
+.instalaciones-contenido{
+    max-width: 1200px; /* Ancho máximo del contenedor */
+    margin: 20px auto; /* Margen vertical de 20px y horizontal automático para centrar */
+    padding: 10px; 
+}
+
+
+.sobre-seccion{
+    display: flex; /* Utilizar flexbox para la disposición */
+    align-items: center; 
+    gap: 20px; /* Espacio entre los elementos */
+}
+
+
+.fotos2{
+    display: flex; 
+    justify-content: space-between; /* Distribuir espacio entre los elementos */
+    margin-top: 35px; 
+    margin-bottom: 35px; 
+    height: 100px; /* Altura fija de 100px */
+    min-height: 250px; /* Altura mínima de 250px */
+    max-height: 250px; /* Altura máxima de 250px */
+    width: 33%; /* Ancho del 33% del contenedor */
+}
+
+
+h3{
+    margin-bottom: 20px; /* Margen inferior de 20px */
+}
+
+
+p{
+    margin-top: 20px; /* Margen superior de 20px */
+}
+
+
+.fotos2 img { 
+    width: 100%; /* Ancho completo del contenedor de imagen */
+    height: auto; /* Altura automática para mantener la proporción */
+    object-fit: cover; 
+    margin-right: 10px; /* Margen derecho de 10px */
+}
+
+
+.seccion-txt{
+    padding: 10px; 
+    margin-bottom: 10px; 
+}
+
