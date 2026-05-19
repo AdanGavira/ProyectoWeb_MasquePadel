@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const db = require('./config/db');
+const path = require('path');
 
 const UsuarioModel = require('./models/UsuarioModel');
 const usuarioRoutes = require('./routes/usuarioRoutes');
@@ -16,6 +17,7 @@ const productoRoutes = require('./routes/productoRoutes');
 const app = express();
 app.use(cors());
 app.use(express.json());
+app.use(express.static(path.join(__dirname, '../frontend')));
 
 // ----------------------------------------------------
 // A CONTINUACIÓN EL CAMBIO CLAVE: Esperamos en TANDEM
@@ -51,6 +53,7 @@ app.get('/api/estado', (req, res) => {
         mensaje: '¡Hola Adán! El servidor de MasquePadel está funcionando al 100%',
         estado: 'Online'
     });
+    res.sendFile(path.join(__dirname, '../frontend/index.html'));
 });
 
 const PORT = process.env.PORT || 3000;
