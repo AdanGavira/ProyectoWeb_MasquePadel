@@ -48,9 +48,17 @@ El código está dividido en módulos independientes para garantizar su mantenib
 
 ---
 
-## 💻 Capturas de Pantalla
+## 💻 Capturas de Pantalla y Funcionalidades
 
-*(Nota: En GitHub, edita este archivo y arrastra aquí 2 capturas reales de tu web funcionando para que se vean directamente)*
+### 1. Portada y Navegación Principal
+Vista principal de la plataforma, diseñada con una interfaz limpia, responsiva y orientada a la experiencia de usuario (UX). Incluye el menú de navegación estructurado para la reserva de instalaciones y la visualización de la tienda.
+
+![alt text](<Captura de pantalla 2026-05-19 143329.png>)
+
+### 2. Autenticación y Zona de Jugadores
+Sistema de login funcional para la "Zona Jugadores". Esta vista está conectada con el backend (API REST) para la validación segura de las credenciales de los usuarios mediante base de datos.
+
+![alt text](<Captura de pantalla 2026-05-19 143436.png>)
 
 ---
 
