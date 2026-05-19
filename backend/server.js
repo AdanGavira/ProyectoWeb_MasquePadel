@@ -53,7 +53,7 @@ app.get('/api/estado', (req, res) => {
     });
 });
 
-const PORT = 4000;
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-    console.log(`🚀 Servidor backend corriendo en http://localhost:${PORT}`);
+    console.log(`Servidor corriendo en el puerto ${PORT}`);
 });
