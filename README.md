@@ -1,4 +1,4 @@
-# 🎾 Más Que Padel - Proyecto Web
+# 🎾 MasQuePadel - Proyecto Web
 
 **Más Que Padel** es una aplicación Full-Stack desarrollada como proyecto integrador. Se trata de una plataforma web diseñada para el mundo del pádel, estructurando de manera profesional la gestión de usuarios, reservas y tienda.
 
