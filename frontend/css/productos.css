@@ -1,0 +1,124 @@
+#productos .overlay{
+    min-height: 40vh; /* Altura mínima de la superposición del 40% */
+}
+
+
+.header-productos{
+    background-image: url(../images/img/foto-fondo-productos.jpg); /* Imagen de fondo para el encabezado de productos */
+}
+
+
+.header-palas{
+    background-image: url(../images/productos/fondos/fondo-palas.jpeg); /* Imagen de fondo para el encabezado de palas */
+    background-position: center; /* Centrar la imagen */
+}
+
+
+.header-zapatillas{
+    background-image: url(../images/productos/fondos/fondo-zapatillas.jpeg); /* Imagen de fondo para el encabezado de zapatillas */
+    background-position: center; 
+}
+
+
+.header-ropa{
+    background-image: url(../images/productos/fondos/fondo-ropa.jpeg); /* Imagen de fondo para el encabezado de ropa */
+    background-position: center; 
+}
+
+
+.header-paleteros{
+    background-image: url(../images/productos/fondos/fondo-paleteros-mochilas.jpeg); /* Imagen de fondo para el encabezado de paleteros */
+    background-position: center; 
+}
+
+
+.header-accesorios{
+    background-image: url(../images/productos/fondos/fondo-accesorios.jpeg); /* Imagen de fondo para el encabezado de accesorios */
+    background-position: center; 
+}
+
+
+.header-outlet{
+    background-image: url(../images/productos/fondos/fondo-outlet.jpeg); /* Imagen de fondo para el encabezado de outlet */
+    background-position: center; 
+}
+
+/*NAVEGADOR*/
+
+.nav-productos{
+    text-align: center; /* Centrar el texto */
+    padding: 20px 0; /* Espaciado vertical */
+    border-bottom: 1px solid #27A4F2; /* Borde inferior */
+}
+
+
+.nav-productos ul{
+    display: inline-flex; /* Mostrar elementos en línea */
+}
+
+
+.nav-productos ul li a{
+    color: #27A4F2; /* Color del texto */
+    display: block; /* Mostrar como bloque */
+    margin: 0 20px; /* Espaciado horizontal */
+}
+
+
+.nav-productos ul li a:hover{
+    color: #1B293A; /* Cambiar el color del texto al pasar el cursor */
+    display: block; /* Mostrar como bloque */
+}
+
+/*LISTADO PRODUCTOS*/
+
+.productos{
+    margin-top: 30px; /* Espaciado superior */
+    text-align: center; /* Centrar el texto */
+}
+
+
+#productos h2{
+    font-size: 2em; /* Tamaño de la fuente */
+    margin-bottom: 30px; /* Espaciado inferior */
+}
+
+
+.listado-productos{
+    display: inline-flex; /* Mostrar elementos en línea */
+    width: 100%; /* Ancho completo */
+    text-align: center; /* Centrar el texto */
+    margin-bottom: 30px; /* Espaciado inferior */
+}
+
+
+.listado-productos figcaption{
+    height: 50px; /* Altura fija */
+    min-height: 30px; /* Altura mínima */
+}
+
+
+.listado-productos article{
+    width: 25%; /* Ancho del 25% del contenedor */
+    margin: 0 10px; /* Espaciado horizontal */
+    padding: 10px; 
+    border-radius: 10px; /* Bordes redondeados */
+    transition: width 0.5s, height 0.5s;
+}
+
+
+.listado-productos article:hover{
+    box-shadow: 0px 0px 10px grey; /* Sombra al pasar el cursor */
+    width: 28% !important;
+    height: auto;
+}
+
+
+.listado-productos .btn-1{
+    background-color: #27A4F2; /* Color de fondo */
+    margin-top: 15px; /* Espaciado superior */
+}
+
+
+.listado-productos .btn-1:hover{
+    background-color: #1B293A; /* Cambiar el color de fondo al pasar el cursor */
+}

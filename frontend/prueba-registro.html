@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cerebro MasquePadel</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 40px; background-color: #f4f4f9; }
+        .caja { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); max-width: 400px;}
+        button { background: #28a745; color: white; border: none; padding: 10px 20px; cursor: pointer; border-radius: 5px; font-size: 16px;}
+        button:hover { background: #218838; }
+        pre { background: #333; color: #00ff00; padding: 10px; border-radius: 5px; margin-top: 20px; overflow-x: auto;}
+    </style>
+</head>
+<body>
+
+    <div class="caja">
+        <h2>Pista de Pruebas IT</h2>
+        <p>Vamos a intentar registrar a Adán en PostgreSQL.</p>
+
+        <button id="btnRegistrar">🔌 Conectar con Node.js y Registrar</button>
+
+        <h4>Respuesta del Servidor:</h4>
+        <pre id="consola">Esperando órdenes...</pre>
+    </div>
+
+    <script>
+        document.getElementById('btnRegistrar').addEventListener('click', function() {
+            const consolaPantalla = document.getElementById('consola');
+            consolaPantalla.innerText = "Enviando datos al servidor...";
+
+            // Hacemos la petición a tu servidor en el puerto 4000
+            fetch('http://localhost:4000/api/usuarios/registro', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    nombre: 'Adán Gavira',
+                    email: 'adan3@masquepadel.com',
+                    password: 'password123'
+                })
+            })
+            .then(respuesta => respuesta.json())
+            .then(datos => {
+                // Escribimos en el HTML lo que nos contesta PostgreSQL
+                consolaPantalla.innerText = JSON.stringify(datos, null, 2);
+            })
+            .catch(error => {
+                consolaPantalla.innerText = "🚨 Error de conexión: " + error.message;
+            });
+        });
+    </script>
+
+</body>
+</html>

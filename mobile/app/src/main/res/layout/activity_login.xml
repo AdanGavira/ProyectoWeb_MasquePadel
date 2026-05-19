@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#1e272e"
+    android:padding="30dp"
+    android:gravity="center">
+
+    <!-- Logo o Título -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MasquePadel"
+        android:textColor="#ffdd59"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="10dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="La App Oficial del Club"
+        android:textColor="#d2dae2"
+        android:textSize="16sp"
+        android:layout_marginBottom="50dp"/>
+
+    <!-- Campo de Email -->
+    <EditText
+        android:id="@+id/inputEmail"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="#2f3640"
+        android:hint="Email del Jugador"
+        android:textColor="#ffffff"
+        android:textColorHint="#808e9b"
+        android:padding="15dp"
+        android:inputType="textEmailAddress"
+        android:layout_marginBottom="20dp"/>
+
+    <!-- Campo de Contraseña -->
+    <EditText
+        android:id="@+id/inputPassword"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="#2f3640"
+        android:hint="Contraseña secreta"
+        android:textColor="#ffffff"
+        android:textColorHint="#808e9b"
+        android:padding="15dp"
+        android:inputType="textPassword"
+        android:layout_marginBottom="30dp"/>
+
+    <!-- Botón de Acceso -->
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="INICIAR SESIÓN"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:backgroundTint="#0be881"
+        android:textColor="#1e272e"
+        android:layout_marginBottom="20dp"/>
+
+    <!-- Chivato de estado -->
+    <TextView
+        android:id="@+id/txtEstadoLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textColor="#ff3f34"
+        android:textAlignment="center"/>
+
+</LinearLayout>

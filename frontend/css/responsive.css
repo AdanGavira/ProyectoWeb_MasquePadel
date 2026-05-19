@@ -1,0 +1,123 @@
+@media(max-width:991px){
+    .menu{
+        padding: 30px;
+    }
+
+    .menu label{
+        display: initial;
+    }
+
+    .menu .navbar{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #1B293A;
+        display: none;  
+        overflow: auto;
+        z-index: 1;
+    }
+    .menu .navbar li{display: block}
+    .navbar li:hover{background-color: #27A4F2;}
+    .menu-responsive{display:block;}
+    .show {display: block !important;}
+
+    .menu .navbar ul li{
+        width: 100%;
+    }
+
+    #menu:checked ~ .navbar{
+        display: initial;
+    }
+
+    .header-content{
+        padding: 160px 30px;
+    }
+
+    .header-txt h1{
+        font-size: 3em;
+    }
+
+    .overlay{display: block}
+    header .overlay{min-height: 10vh;}
+
+    h2{
+        font-size: 2em;
+    }
+
+    .header-txt p{
+        padding: 0;
+    }
+
+    .general{
+        padding: 30px;
+    }
+
+    .general-content{
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+
+    .info-circle{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .info-circle article{
+        width: 90%;
+    }
+
+    #quienes-somos .general-content article{
+        display: block;
+    }
+
+    .circle-txt{
+        margin-bottom: 25px;
+    }
+
+    .footer{
+        padding: 30px;
+    }
+
+    form{
+        display: flex;
+        flex-direction: column;
+        padding: 0 50px;
+    }
+
+    .campo{
+        margin: 0 0 10px 0;
+    }
+
+    .footer-txt{
+        margin-top: 30px;
+    }
+
+    #equipo .txt{
+        width: 90%;
+    }
+
+    .caja-precios, .caja-precios2{
+        width: 90%; 
+        margin-top: 50px;
+    }
+    .caja-precios{
+        float: none;
+    }
+    .caja-precios2{
+        float: none;
+    }
+
+    .listado-productos{
+        display: block;
+    }
+
+    .listado-productos article{
+        width: 90%;
+    }
+    .videos, .fotos2{display: block;}
+    .video-item, .video-item2, .foto-item{max-width: 100%;}
+
+}

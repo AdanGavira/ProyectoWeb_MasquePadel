@@ -1,0 +1,430 @@
+html {
+    font-size: 16px; /* Tamaño de fuente */
+}
+body {
+    font-family: 'poppinsregular'; /* Familia de fuentes para el cuerpo del texto */
+}
+
+/* TIPOGRAFÍA */
+@font-face {
+    font-family: 'poppinsregular';
+    src: url('../fonts/poppins-regular.woff2') format('woff2'),
+         url('../fonts/poppins-regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'poppinsregularbold';
+    src: url('../fonts/poppins-bold.woff2') format('woff2'),
+         url('../fonts/poppins-bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.overlay {
+    background-color: rgba(0, 0, 0, 0.3); /* Fondo semitransparente negro */
+    display: flex; 
+    align-items: center; 
+}
+
+
+.container {
+    max-width: 1200px; /* Ancho máximo de 1200px */
+    margin: 0 auto; /* Centrar el contenedor horizontalmente */
+}
+
+/*MENU*/
+
+.menu {
+    position: absolute; 
+    top: 0; /* Posicionar en la parte superior */
+    left: 0; /* Posicionar en la izquierda */
+    right: 0; /* Posicionar en la derecha */
+    display: flex; /* Utilizar flexbox para la disposición */
+    align-items: center; /* Alinear verticalmente los elementos al centro */
+    justify-content: space-between; /* Distribuir el espacio equitativamente entre los elementos */
+    z-index: 1000; /* Asegurar que el menú esté por encima de otros elementos */
+}
+
+
+.logo {
+    color: #FFFDFC; 
+    font-size: 25px; /* Tamaño de la fuente del logo */
+    font-weight: 800; /* Grosor de la fuente del logo */
+}
+
+
+.menu .navbar ul li {
+    position: relative; 
+    float: left; /* Flotar a la izquierda */
+}
+
+
+.menu .navbar ul li {
+    font-size: 18px; /* Tamaño de la fuente */
+    padding: 20px; 
+    color: #FFFDFC; 
+    display: block; /* Mostrar como bloque */
+    font-weight: 600; /* Grosor de la fuente */
+}
+
+
+#menu {
+    display: none; /* Ocultar el menú por defecto */
+}
+
+
+.menu-icono {
+    width: 25px; /* Ancho del icono del menú */
+}
+
+
+.menu label {
+    cursor: pointer; /* Cambiar el cursor al pasar sobre la etiqueta */
+    display: none; /* Ocultar la etiqueta por defecto */
+}
+.menu-responsive{
+    display:none;
+    background-color: #27A4F2;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+/*INDEX*/
+
+* {
+    margin: 0; /* Eliminar margen */
+    padding: 0; /* Eliminar relleno */
+    box-sizing: border-box;
+    text-decoration: none; /* Eliminar decoración del texto */
+    list-style: none; /* Eliminar estilo de lista */
+}
+
+p {
+    margin-bottom: 10px; /* Margen inferior de 10px */
+}
+p, li{
+    line-height: 22px; /* Espacio entre líneas */
+}
+h1, h2, h3, h4, h5 h6{
+    font-family: 'poppinsregularbold';
+    font-weight: normal;
+}
+h2{text-align: center;}
+
+header {
+    background-image: url(../images/img/foto-fondo3.jpg); /* Imagen de fondo para el encabezado */
+    background-position: center bottom; /* Centrar la imagen en la parte inferior */
+    background-repeat: no-repeat; /* No repetir la imagen */
+    background-size: cover; /* Hacer que la imagen cubra todo el encabezado */
+    min-height: 10vh; /* Altura mínima del 10% de la altura de la ventana */
+}
+
+
+header .overlay {
+    min-height: 70vh; /* Altura mínima del 70% de la altura de la ventana */
+}
+
+
+.indexlink {
+    color: #FFFFFF; /* Color del texto en blanco */
+}
+
+
+.indexlink:visited {
+    color: #FFFFFF; /* Color del texto en blanco */
+}
+
+
+.header-txt {
+    text-align: center; /* Centrar el texto */
+    color: #FFFFFF; 
+}
+
+
+.header-txt h1 {
+    font-size: 5em; /* Tamaño de la fuente */
+    text-transform: uppercase; /* Transformar el texto a mayúsculas */
+    margin-bottom: 20px; 
+}
+
+
+.header-txt p {
+    font-size: 20px; /* Tamaño de la fuente */
+    padding: 0 250px; /* Relleno de 0 arriba y abajo, 250px a la izquierda y derecha */
+    margin-bottom: 45px; 
+}
+
+.btn-1 {
+    display: inline-block; /* Mostrar como bloque en línea */
+    padding: 12px 45px; /* Relleno de 12px arriba y abajo, 45px a los lados */
+    border: 1px solid #FFFDFC; /* Borde de 1px sólido blanco casi puro */
+    color: #FFFFFF; 
+    font-size: 1em; /* Tamaño de la fuente */
+    text-transform: uppercase; /* Transformar el texto a mayúsculas */
+    font-weight: 600; /* Grosor de la fuente */
+    position: relative;
+    border-radius: 5px;
+}
+
+
+.btn-1:hover {
+    color: #FFFFFF; /* Color del texto */
+    background-color: #27A4F2; /* Color de fondo */
+    animation-name: boton;
+    animation-timing-function: ease;
+    animation-duration: 0.5s;
+    transform-origin: bottom;
+}
+@keyframes boton {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+.general {
+    padding: 50px; /* Relleno de 50px alrededor del contenido */
+    text-align: center; 
+}
+
+
+.general-content {
+    display: flex; /* Utilizar flexbox para la disposición */
+    justify-content: space-between; 
+    margin-top: 55px; 
+}
+
+
+#equipo h3 {
+    color: #000000; 
+}
+
+
+#quienes-somos .general-content {
+    display: table; /* Mostrar como tabla */
+}
+
+
+#quienes-somos .general-content article {
+    display: table-cell; /* Mostrar como celda de tabla */
+    vertical-align: middle; /* Alinear verticalmente al centro */
+    padding: 20px; 
+    box-sizing: border-box; 
+}
+
+
+#equipo .txt {
+    padding: 20px; 
+    box-sizing: border-box; 
+}
+
+
+#quienes-somos h3 {
+    color: #000000; /* Color del texto en negro */
+}
+
+
+h2 {
+    font-size: 3.5em; /* Tamaño de la fuente */
+    text-transform: uppercase; /* Transformar el texto a mayúsculas */
+    color: #27A4F2; 
+}
+
+
+.txt h3 {
+    font-size: 1.2em; 
+    color: #FFFDFC; 
+    text-transform: uppercase; /* Transformar el texto a mayúsculas */
+    margin-bottom: 10px; /* Margen inferior de 10px */
+}
+
+
+.txt ul li {
+    color: #000000; 
+    font-size: 1em; 
+}
+
+
+.info-1 {
+    background-image: url(../images/img/foto-fondo.jpg); /* Imagen de fondo */
+    background-size: cover;
+    background-position: center center; /* Centrar la imagen */
+    background-repeat: no-repeat; /* No repetir la imagen */
+    color: #FFFFFF; 
+}
+
+
+.info-1 .overlay {
+    padding: 50px 0; /* Relleno de arriba y abajo */
+}
+
+
+.info-1 h2 {
+    color: #FFFFFF; 
+}
+
+
+.info-content {
+    text-align: center; /* Centrar el texto */
+}
+
+
+.info-circle {
+    display: flex; /* Utilizar flexbox para la disposición */
+    justify-content: space-between; 
+    margin-top: 60px; /* Margen superior */
+}
+
+
+.info-circle article {
+    width: 25%; /* Ancho del 25% del contenedor */
+    padding: 0 20px; /* Relleno de 0 arriba y abajo, 20px a los lados */
+    box-sizing: border-box; 
+}
+
+
+.circle-txt {
+    display: flex; 
+    flex-direction: column; /* Organizar elementos en una columna */
+    align-items: center; /* Centrar los elementos horizontalmente */
+    text-align: center; /* Centrar el texto */
+    margin: 0 10px; /* Margen de 0 arriba y abajo, 10px a los lados */
+}
+
+
+#equipo img {
+    min-height: 250px; /* Altura mínima de 250px */
+    max-height: 250px; /* Altura máxima de 250px */
+}
+
+
+#equipo .txt {
+    width: 33%; /* Ancho del 33% del contenedor */
+}
+
+
+.circle-1 {
+    height: 120px; 
+    width: 120px; 
+    border: 1px solid #FFFDFC;
+    border-radius: 50%; /* Bordes redondeados para formar un círculo */
+    display: table; /* Mostrar como tabla */
+    margin-bottom: 20px; 
+}
+
+
+.circle-1 img {
+    width: 60%; /* Ancho del 60% del contenedor */
+    margin: auto; /* Centrar la imagen horizontalmente */
+    padding-top: 20px; /* Relleno superior de 20px */
+}
+
+
+.circle-1 h3 {
+    font-size: 1.2em; /* Tamaño de la fuente */
+    display: table-cell; /* Mostrar como celda de tabla */
+    vertical-align: middle; /* Alinear verticalmente al centro */
+}
+
+
+.circle-txt p {
+    margin-top: 5px; /* Margen superior */
+}
+
+
+.info-2 {
+    background-image: url(../images/img/clase_padel2.jpg); /* Imagen de fondo */
+    background-position: center center; /* Centrar la imagen */
+    background-repeat: no-repeat; /* No repetir la imagen */
+    background-size: cover;
+}
+
+
+#clases h2, #clases p {
+    color: #FFFFFF; 
+}
+
+
+#clases .info-content {
+    padding: 50px 0; /* Relleno de 50px arriba y abajo */
+}
+
+
+figcaption {
+    font-weight: bold; /* Fuente en negrita */
+    margin-bottom: 10px; 
+}
+
+
+.footer {
+    padding: 50px 0 0; /* Relleno de 50px arriba, 0 a los lados, y 0 abajo */
+    text-align: center; /* Centrar el texto */
+}
+
+
+.form {
+    margin-top: 35px; 
+}
+
+
+form input {
+    margin-bottom: 15px; 
+}
+
+
+.campo {
+    margin-right: 10px; /* Margen derecho de 10px */
+    padding: 17px 35px; /* Relleno de 17px arriba y abajo, 35px a los lados */
+    border: 2px solid #B4B4B4; 
+    outline: none; /* Eliminar el contorno del borde */
+    color: #1B293A; /* Color del texto */
+}
+
+
+.campo::placeholder {
+    color: #B4B4B4; 
+}
+
+
+.btn-2 {
+    padding: 17px 35px; 
+    border: 2px solid #27A4F2; 
+    background-color: #27A4F2; 
+    color: #FFFDFC; 
+}
+
+
+.btn-2:hover {
+    background-color: #000000; 
+    border-color: #000000; 
+}
+
+
+.footer-txt {
+    margin-top: 50px; 
+    border-top: 1px solid #B4B4B47E; 
+    padding: 20px 0; /* Relleno de 20px arriba y abajo */
+}
+
+
+.footer-txt p {
+    color: #1B293A; /* Color del texto */
+    font-size: 1em; /* Tamaño de la fuente */
+}
+
+
+.footer-txt a {
+    color: #27A4F2; 
+}
+
+
+.footer-txt a:hover {
+    text-decoration: underline; /* Subrayar el texto */
+}
+
+
+
+

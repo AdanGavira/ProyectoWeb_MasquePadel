@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda - MasquePadel</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <script src="../js/menu.js"></script>
+
+    <style>
+        .tienda-container { max-width: 1200px; margin: 50px auto; padding: 20px; }
+        .tienda-titulo { text-align: center; color: #1e3c72; margin-bottom: 40px; font-size: 32px; }
+
+        /* Sistema de "Grid" (Rejilla) para mostrar los productos pareado a tu estilo */
+        .rejilla-productos {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        /* La "tarjeta" de compra individual de cada artículo */
+        .tarjeta-producto {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease;
+        }
+        .tarjeta-producto:hover { transform: translateY(-5px); box-shadow: 0 6px 15px rgba(0,0,0,0.2); }
+
+        /* Espacio para la foto falsa por ahora */
+        .tarjeta-foto {
+            width: 100%;
+            height: 200px;
+            background-color: #f1f2f6; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #aaa;
+            font-style: italic;
+            border-bottom: 1px solid #eee;
+        }
+
+        .tarjeta-info { padding: 20px; text-align: center; flex-grow: 1; display:flex; flex-direction: column; }
+        .producto-categoria { font-size: 12px; color: #888; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px; }
+        .producto-nombre { font-size: 18px; color: #333; margin: 0 0 10px 0; font-weight: bold; }
+        .producto-desc { font-size: 14px; color: #666; margin-bottom: 15px; flex-grow: 1;}
+        .producto-precio { font-size: 22px; color: #e67e22; font-weight: bold; margin-bottom: 15px; }
+
+        .btn-comprar { background: #1e3c72; color: #fff; padding: 10px; border: none; border-radius: 5px; font-size: 14px; cursor: pointer; transition: 0.2s;}
+        .btn-comprar:hover { background: #2a5298; }
+
+        #mensaje-carga { text-align: center; font-size: 18px; color: #666; width: 100%; }
+    </style>
+</head>
+<body>
+
+    <!-- CABECERA -->
+    <header style="height: auto; min-height: 100px; padding-bottom: 15px; background: #333;">
+        <div class="overlay" style="height: 100%;">
+            <div class="menu container">
+                <div><a href="/index.html" class="logo">MasquePadel</a></div>
+                <button onclick="myFunction()" class="menu-responsive">Menú</button>
+                <nav id="mi-menu" class="navbar">
+                    <ul>
+                        <li><a class="indexlink" href="/index.html">Inicio</a></li>
+                        <li><a class="indexlink" href="/pages/instalaciones.html">Instalaciones</a></li>
+                        <li><a class="indexlink" href="/pages/reservas.html">Reserva Pistas</a></li>
+                        <li><a class="indexlink" href="/shop/productos.html">Productos</a></li>
+                        <li><a class="indexlink" href="/pages/galeria.html">Galería</a></li>
+                        <li><a class="indexlink" href="/pages/contacto.html">Contacto</a></li>
+                        <li><a class="indexlink boton-login" href="/pages/login.html" style="color: #ffffff;">👤 Iniciar Sesión</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- EL ESCAPARATE -->
+    <main class="tienda-container">
+        <h2 class="tienda-titulo">🛒 Tienda Oficial MasquePadel</h2>
+
+        <!-- Aquí se inyectarán las palas dinámicamente -->
+        <div id="escaparate-central" class="rejilla-productos">
+            <p id="mensaje-carga">Conectando con el almacén central...</p>
+        </div>
+    </main>
+
+    <!-- MOTOR JAVASCRIPT (EL CARRETILLERO) -->
+    <script>
+        // Nada más cargar la hoja, pide el catálogo a la base de datos
+        document.addEventListener("DOMContentLoaded", async function() {
+            // Refresca logueo cabecera por cortesía
+            const token = localStorage.getItem('token_masquepadel');
+            const emailUsuario = localStorage.getItem('usuario_email');
+            if (token && emailUsuario) {
+                const btnMenu = document.querySelector('.boton-login');
+                if(btnMenu) {
+                    btnMenu.href = "#";
+                    btnMenu.innerHTML = `👋 Hola, ${emailUsuario.split('@')[0]}`;
+                }
+            }
+
+            const escaparate = document.getElementById('escaparate-central');
+
+            try {
+                // LLAMAMOS AL CONTROLADOR DE NODE.JS
+                const respuesta = await fetch('http://localhost:4000/api/productos/todos');
+                const catalogoBaseDatos = await respuesta.json();
+
+                escaparate.innerHTML = ""; // Borramos el texto de "Cargando..."
+
+                // POR CADA FILA EN POSTGRESQL, "DIBUJAMOS" UN HTML DE TARJETA
+                catalogoBaseDatos.forEach(articulo => {
+                    const tarjeta = document.createElement('div');
+                    tarjeta.className = "tarjeta-producto";
+
+                    // Diseñamos el bloque interno de HTML
+                    tarjeta.innerHTML = `
+                        <!-- Zona Gris simulando la imagen de base de datos -->
+                        <div class="tarjeta-foto">[ Foto: ${articulo.imagen_url} ]</div>
+
+                        <div class="tarjeta-info">
+                            <span class="producto-categoria">${articulo.categoria}</span>
+                            <h3 class="producto-nombre">${articulo.nombre}</h3>
+                            <p class="producto-desc">${articulo.descripcion}</p>
+                            <div class="producto-precio">${articulo.precio} €</div>
+                            <button class="btn-comprar" onclick="añadirAlCarrito('${articulo.nombre}')">Añadir al Carrito</button>
+                        </div>
+                    `;
+                    // Pegamos la tarjeta completa en el escaparate de la web
+                    escaparate.appendChild(tarjeta);
+                });
+
+            } catch (error) {
+                escaparate.innerHTML = "<p style='color:red; text-align:center; width:100%;'>Error al cargar inventario: Las estanterías están bloqueadas.</p>";
+            }
+        });
+
+        // Función tonta de prueba para clics del cliente
+        function añadirAlCarrito(nombreProducto) {
+            const token = localStorage.getItem('token_masquepadel');
+            if(!token) {
+                alert("Debes iniciar sesión para comprar en la tienda.");
+                window.location.href = "/pages/login.html";
+                return;
+            }
+            alert(`🛒 ¡Bolsa actualizada! Has añadido: ${nombreProducto}`);
+        }
+    </script>
+</body>
+</html>

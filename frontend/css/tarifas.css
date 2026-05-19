@@ -1,0 +1,49 @@
+table, th, td {
+    border: 0px solid black; 
+    border-collapse: collapse; /* Colapsar los bordes de la tabla */
+    padding: 5px; 
+    text-align: center; /* Centrar el texto dentro de las celdas */
+    margin: 0 auto; /* Centrar la tabla horizontalmente */
+    margin-bottom: 5px; /* Margen inferior de 5px */
+}
+
+
+.tabla-precios, h1, h2, h3, p {
+    text-align: center; 
+    margin: 0 auto; 
+    padding: 2px; 
+    margin-top: 5px; 
+}
+.tabla-precios{margin-bottom: 30px;}
+.puntos-clase{
+    background-color: #27A4F2;
+    padding: 40px;
+}
+
+ul li {
+    padding: 5px; 
+    margin-left: 5px; 
+}
+
+.info-puntos-clases{margin-top: 30px;}
+.info-puntos-clases li {
+    color: #FFFFFF; /* Color del texto */
+    text-align: center;
+}
+
+.tarifas {
+    background-image: url(../images/img/foto-tarifas.jpg); /* Imagen de fondo */
+    background-position: center bottom; /* Centrar la imagen en la parte inferior */
+    background-repeat: no-repeat; /* No repetir la imagen */
+    background-size: cover; /* Hacer que la imagen cubra todo el encabezado */
+}
+
+
+.tarifas .overlay {
+    min-height: 70vh; 
+}
+
+
+.cuadro1 {
+    padding: 50px 0;
+}

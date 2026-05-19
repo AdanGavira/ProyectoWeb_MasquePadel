@@ -1,0 +1,49 @@
+version: '3.8'
+
+services:
+  # 1. Tu Web (Frontend) servida por Nginx
+  web:
+    image: nginx:alpine
+    container_name: masquepadel_web
+    ports:
+      - "80:80"        # El puerto 80 es la entrada por defecto de internet
+    volumes:
+      - ./frontend:/usr/share/nginx/html # Le pasamos tu carpeta frontend para que la muestre
+    depends_on:
+      - api            # Si alguien visita la web, que la API y BD ya estén encendidas
+
+  # 2. Tu Cerebro (Backend API en Node.js)
+  api:
+    build: 
+      context: ./backend
+    container_name: masquepadel_api
+    ports:
+      - "4000:4000"
+    volumes:
+      - ./backend:/app           
+      - /app/node_modules        
+    environment:
+      - PORT=4000
+      - DB_HOST=db
+      - DB_PORT=5432
+      - DB_USER=admin_padel
+      - DB_PASSWORD=padel_secreto
+      - DB_NAME=masquepadel_db
+    depends_on:
+      - db                       
+
+  # 3. Tu Memoria (Base de Datos PostgreSQL)
+  db:
+    image: postgres:15-alpine
+    container_name: masquepadel_db
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=admin_padel
+      - POSTGRES_PASSWORD=padel_secreto
+      - POSTGRES_DB=masquepadel_db
+    volumes:
+      - pgdata:/var/lib/postgresql/data  
+
+volumes:
+  pgdata:

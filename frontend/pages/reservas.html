@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reserva tu Pista - MasquePadel</title>
+    <!-- EL TRUCO ESTÁ AQUÍ => Poner un / delante en vez de ../ -->
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/responsive.css">
+    <!-- Si tienes otro css específico para esto, añádelo, sino sobra -->
+    <script src="/js/menu.js"></script>
+
+    <style>
+        .reserva-container { max-width: 800px; margin: 50px auto; padding: 20px; background: #fff; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .reserva-container h2 { color: #1e3c72; text-align: center; margin-bottom: 20px;}
+
+        .panel-fecha { text-align: center; margin-bottom: 30px; }
+        .panel-fecha input[type="date"] { padding: 10px; font-size: 16px; border-radius: 5px; border: 1px solid #ccc; }
+
+        .pista-bloque { margin-bottom: 30px; border-top: 2px solid #f0f0f0; padding-top: 20px;}
+        .pista-bloque h3 { color: #e67e22; }
+
+        .grid-horas { display: grid; grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); gap: 10px; margin-top: 15px; }
+
+        .btn-hora { 
+            padding: 15px 10px; border: none; border-radius: 5px; font-weight: bold; font-size: 14px;
+            cursor: pointer; transition: transform 0.2s; 
+        }
+        .btn-hora.libre { background-color: #2ecc71; color: white; }
+        .btn-hora.libre:hover { transform: scale(1.05); background-color: #27ae60; }
+        .btn-hora.ocupada { background-color: #e74c3c; color: white; cursor: not-allowed; opacity: 0.6; }
+
+        /* Pantalla de bloqueo si no han hecho login */
+        #pantalla-bloqueo { display: none; text-align: center; padding: 40px; }
+        #zona-reservas { display: none; } /* Oculto hasta saber si es VIP */
+    </style>
+</head>
+<body>
+
+    <!-- CABECERA -->
+    <header style="height: auto; min-height: 100px; padding-bottom: 15px; background: #333;">
+        <div class="overlay" style="height: 100%;">
+            <div class="menu container">
+                <div><a href="../index.html" class="logo">MasquePadel</a></div>
+                <button onclick="myFunction()" class="menu-responsive">Menú</button>
+                <nav id="mi-menu" class="navbar">
+                    <ul>
+                        <li><a class="indexlink" href="/index.html">Inicio</a></li>
+                        <li><a class="indexlink" href="/pages/instalaciones.html">Instalaciones</a></li>
+                        <li><a class="indexlink" href="/pages/reservas.html">Reserva Pistas</a></li>
+                        <li><a class="indexlink" href="/shop/productos.html">Productos</a></li>
+                        <li><a class="indexlink" href="/pages/galeria.html">Galería</a></li>
+                        <li><a class="indexlink" href="/pages/contacto.html">Contacto</a></li>
+                        <li><a class="indexlink boton-login" href="/pages/login.html" style="color: #ffffff;">👤 Iniciar Sesión</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- ZONA CENTRAL DE RESERVAS -->
+    <div class="container reserva-container">
+
+        <!-- Si no está logueado, le enseñamos esto -->
+        <div id="pantalla-bloqueo">
+            <h2>🔒 Acceso Restringido</h2>
+            <p>Para poder reservar una pista necesitas identificarte como jugador.</p>
+            <br>
+            <a href="login.html" class="btn-1" style="background:#e67e22; padding:15px; color:white; text-decoration:none; border-radius:5px;">Ir a Iniciar Sesión</a>
+        </div>
+
+        <!-- Si está logueado, le enseñamos esto -->
+        <div id="zona-reservas">
+            <h2>📅 Alquiler de Pistas</h2>
+
+            <div class="panel-fecha">
+                <label for="fechaReserva"><strong>Elige un día: </strong></label>
+                <input type="date" id="fechaReserva">
+            </div>
+
+            <!-- Pista 1 (Cristal) -->
+            <div class="pista-bloque">
+                <h3>🎾 Pista 1 - Cristal Panorámica</h3>
+                <div class="grid-horas" id="horas-pista-1">
+                    <!-- Los botones se generarán por JavaScript mágicamente -->
+                </div>
+            </div>
+
+            <!-- Pista 2 (Muro) -->
+            <div class="pista-bloque">
+                <h3>🎾 Pista 2 - Muro Clásica</h3>
+                <div class="grid-horas" id="horas-pista-2">
+                    <!-- Los botones se generarán por JavaScript mágicamente -->
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- EL "MOTOR" VISUAL (JavaScript) -->
+    <script>
+        const horasPosibles = ["09:00", "10:30", "12:00", "17:00", "18:30", "20:00", "21:30"];
+        let fechaActual = "";
+
+        // 1. COMPROBACIÓN DE SEGURIDAD (¿Es un VIP?)
+        document.addEventListener("DOMContentLoaded", function() {
+            const token = localStorage.getItem('token_masquepadel');
+            if (!token) {
+                // Modo Cerrado
+                document.getElementById('pantalla-bloqueo').style.display = 'block';
+            } else {
+                // Modo VIP Abierto
+                document.getElementById('zona-reservas').style.display = 'block';
+
+                // Arreglamos el menú de arriba
+                const emailUsuario = localStorage.getItem('usuario_email');
+                const btnMenu = document.querySelector('.boton-login');
+                if(btnMenu) {
+                    btnMenu.href = "#";
+                    btnMenu.innerHTML = `👋 Hola, ${emailUsuario.split('@')[0]}`;
+                }
+
+                // Ponemos la fecha de hoy por defecto y cargamos la pista
+                const hoy = new Date().toISOString().split('T')[0];
+                document.getElementById('fechaReserva').value = hoy;
+                cargarPistas(hoy);
+            }
+        });
+
+        // 2. CUANDO EL USUARIO CAMBIA DE DÍA EN EL CALENDARIO
+        document.getElementById('fechaReserva').addEventListener('change', function(e) {
+            cargarPistas(e.target.value);
+        });
+
+        // 3. LA MAGIA: PREGUNTAR A NODE.JS QUÉ PISTAS ESTÁN LIBRES
+        async function cargarPistas(fecha) {
+            fechaActual = fecha;
+            const cajaPista1 = document.getElementById('horas-pista-1');
+            const cajaPista2 = document.getElementById('horas-pista-2');
+
+            cajaPista1.innerHTML = "Cargando..."; cajaPista2.innerHTML = "Cargando...";
+
+            try {
+                // Preguntamos al recepcionista (Backend)
+                const res = await fetch(`http://localhost:4000/api/reservas/disponibilidad/${fecha}`);
+                const reservasOcupadas = await res.json(); // Nos devolverá una lista tipo [{pista_numero: 1, hora: "10:30"}]
+
+                cajaPista1.innerHTML = ""; cajaPista2.innerHTML = "";
+
+                // Dibujamos los botones para las 2 pistas
+                horasPosibles.forEach(hora => {
+                    cajaPista1.appendChild(crearBotonHora(1, hora, reservasOcupadas));
+                    cajaPista2.appendChild(crearBotonHora(2, hora, reservasOcupadas));
+                });
+
+            } catch (error) {
+                console.error("Error al cargar la disponibilidad:", error);
+            }
+        }
+
+        // 4. EL CREADOR DE BOTONES VERDES (LIBRE) Y ROJOS (OCUPADO)
+        function crearBotonHora(numeroPista, horaToCheck, reservasBaseDatos) {
+            const btn = document.createElement('button');
+            btn.innerText = horaToCheck;
+
+            // ¿Alguien tiene reservada esta pista a esta hora?
+            const estaOcupada = reservasBaseDatos.find(r => r.pista_numero === numeroPista && r.hora === horaToCheck);
+
+            if (estaOcupada) {
+                btn.className = "btn-hora ocupada";
+                btn.innerText += "\n(Reservada)";
+            } else {
+                btn.className = "btn-hora libre";
+                btn.onclick = () => hacerReserva(numeroPista, horaToCheck);
+            }
+            return btn;
+        }
+
+        // 5. ENVIAR LA COMPRA AL SERVIDOR (RESERVAR)
+        async function hacerReserva(numeroPista, hora) {
+            if(!confirm(`¿Confirmas la reserva de la Pista ${numeroPista} a las ${hora} para el día ${fechaActual}?`)) return;
+
+            try {
+                const res = await fetch('http://localhost:4000/api/reservas/nueva', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        usuario_id: 8, // Idealmente esto lo sacaríamos del Token real
+                        pista_numero: numeroPista,
+                        fecha: fechaActual,
+                        hora: hora
+                    })
+                });
+
+                const data = await res.json();
+                if(res.ok) {
+                    alert('🎾 ¡Pista Reservada con éxito! Te esperamos.');
+                    cargarPistas(fechaActual); // Recargamos para que se ponga rojo
+                } else {
+                    alert('Error: ' + data.error);
+                }
+            } catch(e) {
+                alert('No se pudo conectar con el servidor.');
+            }
+        }
+    </script>
+</body>
+</html>

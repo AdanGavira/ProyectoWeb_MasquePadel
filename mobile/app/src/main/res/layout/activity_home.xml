@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#f1f2f6"
+    android:padding="24dp">
+
+    <!-- Cabecera del Panel -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Dashboard"
+        android:textColor="#808e9b"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:textAllCaps="true"
+        android:layout_marginTop="20dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="¡Bienvenido a la Pista!"
+        android:textColor="#2f3640"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="40dp" />
+
+    <!-- Botón 1: NUEVO PARTIDO (El que nos llevará al marcador) -->
+    <Button
+        android:id="@+id/btnIrPartido"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:text="🎾 EMPEZAR PARTIDO"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:backgroundTint="#0be881"
+        android:textColor="#ffffff"
+        android:elevation="4dp"
+        android:layout_marginBottom="20dp"/>
+
+    <!-- Botón 2: RESERVAS (En construcción) -->
+    <Button
+        android:id="@+id/btnIrReservas"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:text="📅 MIS RESERVAS"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:backgroundTint="#3498db"
+        android:textColor="#ffffff"
+        android:elevation="4dp"
+        android:layout_marginBottom="20dp"/>
+
+    <!-- Botón 3: CERRAR SESIÓN -->
+    <Button
+        android:id="@+id/btnCerrarSesion"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="Cerrar Sesión"
+        android:textSize="16sp"
+        android:backgroundTint="#ff4757"
+        android:textColor="#ffffff"
+        android:layout_marginTop="30dp"/>
+
+</LinearLayout>

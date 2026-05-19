@@ -1,0 +1,129 @@
+.header-recopilacion{
+    background-image: url(../images/productos/fondos/fondo-recopilaciones.jpeg); /* Imagen de fondo para el encabezado */
+    background-position: center;
+}
+
+
+.recopilacion-contenido{
+    display: flex; /*alineación */
+    flex-direction: column; /* Organizar los elementos en una columna */
+    align-items: center; 
+    margin: 20px; 
+}
+
+
+.recopilacion-contenido h2, h3{
+    text-align: center; 
+    margin-bottom: 20px; 
+    margin-top: 20px; 
+}
+
+
+.seccion-recopilacion{
+    width: 100%; 
+    max-width: 1200px; /* Ancho máximo */
+}
+
+
+.videos{
+    display: flex; 
+    flex-wrap: wrap; /* los elementos se ajustan a múltiples líneas */
+    gap: 20px; /* Espacio entre los videos */
+    justify-content: center;
+}
+
+
+.video-item{
+    flex: 1 1 calc(33.33% - 20px); /* Cada video ocupa un tercio, con espacio entre ellos */
+    box-sizing: border-box; 
+    max-width: 33.33%; /* Ancho máximo de un tercio del contenedor */
+}
+
+.video-item2{
+    box-sizing: border-box; 
+    max-width: 50%;
+}
+
+
+.video-item iframe{
+    width: 100%; 
+    height: 315px; 
+}
+
+
+.video-item p{
+    margin-top: 10px; /* Añadir margen superior */
+    font-size: 14px; /* Tamaño de la fuente */
+    color: #27A4F2; /* Color del texto */
+    text-align: center; /* Centrar el texto */
+}
+
+.video-item2 P{
+    margin-top: 10px; 
+    font-size: 14px; 
+    color: #27A4F2; 
+    text-align: center;
+}
+
+.video-item2 video{
+    width: 100%; 
+    height: 315px; 
+}
+
+
+.fotos2{
+    display: flex; 
+    justify-content: space-between; /* Distribuir el espacio entre las fotos */
+    margin-top: 35px; 
+    margin-bottom: 35px; 
+    flex-wrap: wrap; /* los elementos se ajustan a múltiples líneas */
+}
+
+
+.fotos2 img { 
+    width: 100%; 
+    height: auto; 
+    object-fit: cover; /* Ajustar la imagen para cubrir el contenedor */
+    margin-right: 10px; 
+    padding: 10px; 
+}
+
+
+.foto-item{
+    flex: 1 1 calc(33.33% - 20px); 
+    box-sizing: border-box; 
+    margin: 10px; 
+    max-width: calc(33.33% - 20px); 
+}
+
+
+.foto-item img{
+    width: 100%; 
+    height: 250px; 
+    object-fit: cover; 
+    border-radius: 10px; /* Bordes redondeados para las imágenes */
+}
+
+
+.foto-item p{
+    margin-top: 10px; 
+    font-size: 14px; /* Tamaño de la fuente */
+    color: #000000; 
+    text-align: center; /* Centrar el texto */
+}
+
+
+.foto-item a{
+    color: #27A4F2; /* Color del enlace */
+    text-decoration: none; /* Eliminar subrayado predeterminado */
+}
+
+
+.foto-item a:hover{
+    text-decoration: underline; /* Añadir subrayado al pasar el cursor */
+}
+
+
+.foto-item figcaption{
+    color: #27A4F2; /* Color del pie de foto */
+}

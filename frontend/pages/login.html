@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acceso Jugadores - MasquePadel</title>
+
+    <!-- Enlazamos tu CSS base para aprovechar la misma tipografía y colores raíz -->
+    <link rel="stylesheet" href="../css/style.css">
+
+    <style>
+        /* Pantalla completa dedicada exclusivamente al Login */
+        body { 
+            background-color: var(--color-fondo, #f1f2f6); /* Usa la variable de tu sistema o un gris claro */
+            height: 100vh; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            margin: 0; 
+            background-image: url('../images/img/pista_padel.jpg'); /* Añadimos tu pista de fondo */
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Capa oscura para que resalte la caja blanca */
+        .capa-oscura {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background-color: rgba(0, 0, 0, 0.6); 
+            z-index: -1;
+        }
+
+        /* La caja minimalista del formulario, usando colores limpios */
+        .login-box {
+            background: white; 
+            padding: 40px; 
+            border-radius: 12px; 
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            width: 100%; 
+            max-width: 350px; 
+            text-align: center;
+            z-index: 1; /* Para que quede encima de la capa oscura */
+        }
+
+        .login-box h2 { 
+            color: #333; 
+            margin-top: 0; 
+            font-size: 24px;
+        }
+
+        .input-group { 
+            margin-bottom: 20px; 
+            text-align: left; 
+        }
+
+        .input-group label { 
+            display: block; 
+            font-weight: 600; 
+            margin-bottom: 5px; 
+            font-size: 13px; 
+            color: #555;
+        }
+
+        /* Simula la clase .campo que tienes en tu footer original */
+        .input-group input { 
+            width: 100%; 
+            padding: 12px; 
+            border: 1px solid #ccc; 
+            border-radius: 6px; 
+            box-sizing: border-box; 
+            font-size: 14px;
+            background-color: #fafafa;
+        }
+
+        /* Mimetizamos el botón original .btn-2 o el #ff7e5f con el que estabas cómodo */
+        button {
+            width: 100%; 
+            background-color: #e67e22; /* Color corporativo de tus botones si los tienes naranjas */
+            color: white; 
+            border: none; 
+            padding: 14px;
+            border-radius: 6px; 
+            font-size: 16px; 
+            font-weight: bold; 
+            cursor: pointer; 
+            transition: background-color 0.3s ease;
+        }
+        button:hover { 
+            background-color: #d35400; /* Naranja más oscuro al pasar el ratón */
+        }
+
+        .enlace-volver {
+            display: block; 
+            margin-top: 20px; 
+            color: #888; 
+            text-decoration: none; 
+            font-size: 13px;
+        }
+        .enlace-volver:hover { 
+            color: #333; 
+        }
+
+        .mensaje { min-height: 20px; font-size: 14px; margin-top: 15px;}
+        .error { color: #d9534f; }
+        .exito { color: #5cb85c; }
+    </style>
+</head>
+<body>
+
+    <div class="capa-oscura"></div> <!-- Oscurece la foto de fondo -->
+
+    <div class="login-box">
+        <h2>Zona Jugadores</h2>
+        <p style="color: #777; font-size: 14px; margin-bottom: 25px;">MasquePadel - Acceso</p>
+
+        <form id="formularioLogin">
+            <div class="input-group">
+                <label>Email del Jugador</label>
+                <input type="email" id="email" placeholder="Introduce tu correo" required>
+            </div>
+
+            <div class="input-group">
+                <label>Contraseña</label>
+                <input type="password" id="password" placeholder="••••••••" required>
+            </div>
+
+            <button type="submit">Iniciar Sesión</button>
+        </form>
+
+        <div id="cajaMensaje" class="mensaje"></div>
+
+        <!-- Botón minimalista por si quieren volver a la portada sin iniciar sesión -->
+        <a href="../index.html" class="enlace-volver">← Volver a la portada</a>
+    </div>
+
+    <script>
+        document.getElementById('formularioLogin').addEventListener('submit', async function(e) {
+            e.preventDefault(); 
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const cajaMensaje = document.getElementById('cajaMensaje');
+            cajaMensaje.innerHTML = "Comprobando...";
+            cajaMensaje.className = "mensaje";
+
+            try {
+                const respuesta = await fetch('http://localhost:4000/api/usuarios/login', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email: email, password: password })
+                });
+
+                const data = await respuesta.json();
+
+                if (respuesta.ok) {
+                    cajaMensaje.innerHTML = data.mensaje;
+                    cajaMensaje.className = "mensaje exito";
+
+                    localStorage.setItem('token_masquepadel', data.token);
+                    localStorage.setItem('usuario_email', email);
+
+                    setTimeout(() => { window.location.href = '../index.html'; }, 1000);
+                } else {
+                    cajaMensaje.innerHTML = data.error;
+                    cajaMensaje.className = "mensaje error";
+                }
+            } catch (error) {
+                cajaMensaje.innerHTML = "Error conectando con el servidor.";
+                cajaMensaje.className = "mensaje error";
+            }
+        });
+    </script>
+</body>
+</html>

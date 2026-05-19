@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#1e272e"
+    android:padding="20dp"
+    android:gravity="center">
+
+    <TextView
+        android:id="@+id/txtHeaderPista"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="PISTA 1 - EN JUEGO"
+        android:textAlignment="center"
+        android:textColor="#ffdd59"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="30dp"/>
+
+    <!-- CAJA DEL MARCADOR -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#2f3640"
+        android:padding="15dp"
+        android:layout_marginBottom="40dp"
+        android:elevation="4dp">
+
+        <!-- PAREJA 1 (LOCAL) -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/txtNombresPareja1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Jugadores Locales"
+                android:textColor="#ffffff"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textAlignment="center"/>
+
+            <TextView
+                android:id="@+id/txtPuntosPareja1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textColor="#0be881"
+                android:textSize="70sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/txtJuegosPareja1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Juegos: 0 | Sets: 0"
+                android:textColor="#d2dae2"
+                android:textSize="14sp"/>
+        </LinearLayout>
+
+        <!-- SEPARADOR -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="-"
+            android:textColor="#ffffff"
+            android:textSize="50sp"
+            android:layout_gravity="center"/>
+
+        <!-- PAREJA 2 (VISITANTE) -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/txtNombresPareja2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Jugadores Rivales"
+                android:textColor="#ffffff"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textAlignment="center"/>
+
+            <TextView
+                android:id="@+id/txtPuntosPareja2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textColor="#ff3f34"
+                android:textSize="70sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/txtJuegosPareja2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Juegos: 0 | Sets: 0"
+                android:textColor="#d2dae2"
+                android:textSize="14sp"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- BOTONERA DE ACCIÓN -->
+    <!-- Opción de 2 botones grandes en vez de 4 porque, a la postre, es más fácil saber "Quién ha ganado el punto" que quién de los dos ha hecho el remate exacto en pleno juego amateur rápido -->
+    <Button
+        android:id="@+id/btnPuntoPareja1"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:text="🎾 PUNTO PAREJA 1"
+        android:textSize="18sp"
+        android:backgroundTint="#0be881"
+        android:layout_marginBottom="15dp"/>
+
+    <Button
+        android:id="@+id/btnPuntoPareja2"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:text="❌ PUNTO PAREJA 2"
+        android:textSize="18sp"
+        android:backgroundTint="#ff3f34"
+        android:layout_marginBottom="30dp"/>
+
+    <!-- CHIVATO DEL SERVIDOR -->
+    <TextView
+        android:id="@+id/txtEstadoServer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Conectado a MasquePadel Cloud..."
+        android:textColor="#808e9b"
+        android:textAlignment="center"/>
+
+</LinearLayout>

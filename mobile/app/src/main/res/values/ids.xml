@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="btnIrPartido" type="id">IrPartido</item>
+    <item name="btnIrReservas" type="id">IrReservas</item>
+    <item name="btnCerrarSesion" type="id">CerrarSesion</item>
+    <item name="inputEmail" type="id">Email</item>
+    <item name="inputPassword" type="id">Password</item>
+    <item name="btnLogin" type="id">Login</item>
+    <item name="txtEstadoLogin" type="id">EstadoLogin</item>
+</resources>
