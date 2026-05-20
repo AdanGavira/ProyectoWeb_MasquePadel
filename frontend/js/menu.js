@@ -1,16 +1,17 @@
-function myFunction() {
-  document.getElementById("mi-menu").classList.toggle("show");
-}
+/**
+ * Lógica para el menú de navegación (Menú Hamburguesa)
+ */
 
-window.onclick = function(event) {
-  if (!event.target.matches('.menu-responsive')) {
-    var dropdowns = document.getElementsByClassName("navbar");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
+function myFunction() {
+    // Obtenemos el contenedor del menú usando su ID
+    var x = document.getElementById("mi-menu");
+
+    // Comprobamos si tiene solo la clase base "navbar"
+    if (x.className === "navbar") {
+        // Añadimos la clase "mostrar" para que se despliegue en móviles
+        x.className += " mostrar";
+    } else {
+        // Lo devolvemos a su estado original para que se oculte
+        x.className = "navbar";
     }
-  }
 }

@@ -425,6 +425,71 @@ form input {
     text-decoration: underline; /* Subrayar el texto */
 }
 
+/* =========================================
+   BARRA DE NAVEGACIÓN GLOBAL
+   ========================================= */
+.menu.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: rgba(20, 20, 20, 0.95); /* Fondo oscuro para que se lean los links */
+    border-bottom: 3px solid #ff4500; /* Línea corporativa naranja */
+    position: relative; /* Mantiene el menú en el flujo normal */
+    z-index: 1000;
+}
 
+.logo {
+    font-size: 26px;
+    font-weight: 800;
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Ocultar botón móvil en PC */
+.menu-responsive {
+    display: none;
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* Alineación de links en PC */
+.navbar ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 25px; /* Separación entre botones */
+    margin: 0;
+    padding: 0;
+}
+
+.navbar a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+/* Efecto al pasar el ratón */
+.navbar a:hover {
+    color: #ff4500;
+}
+
+/* Botón especial perfil */
+.btn-usuario a {
+    background-color: #ff4500;
+    padding: 8px 15px;
+    border-radius: 5px;
+    color: white !important;
+}
+.btn-usuario a:hover {
+    background-color: #e03e00;
+}
 
 

@@ -121,3 +121,48 @@
     .video-item, .video-item2, .foto-item{max-width: 100%;}
 
 }
+
+/* =========================================
+   ADAPTACIÓN DEL MENÚ PARA MÓVILES
+   ========================================= */
+@media screen and (max-width: 850px) {
+    .menu.container {
+        flex-wrap: wrap; /* Permite que el menú colapse */
+        padding: 15px;
+    }
+
+    /* Mostramos el botón hamburguesa */
+    .menu-responsive {
+        display: block; 
+    }
+
+    /* Ocultamos la barra de links por defecto */
+    .navbar {
+        display: none; 
+        width: 100%;
+        margin-top: 15px;
+    }
+
+    /* Esta clase "mostrar" se añade con JavaScript al tocar el botón */
+    .navbar.mostrar {
+        display: block;
+    }
+
+    /* Ponemos los links en vertical */
+    .navbar ul {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .navbar a {
+        display: block;
+        padding: 12px;
+        background-color: #333;
+        border-radius: 4px;
+    }
+
+    .btn-usuario a {
+        background-color: #ff4500;
+    }
+}
