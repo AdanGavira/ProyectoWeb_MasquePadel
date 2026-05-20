@@ -426,17 +426,21 @@ form input {
 }
 
 /* =========================================
-   BARRA DE NAVEGACIÓN GLOBAL
+   BARRA DE NAVEGACIÓN GLOBAL CORREGIDA
    ========================================= */
 .menu.container {
+    position: absolute; /* Esto hace la magia: lo arranca del flujo del texto */
+    top: 0;             /* Lo pega totalmente al techo de la web */
+    left: 0;
+    width: 100%;
+    box-sizing: border-box; /* Evita que el padding lo deforme */
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 15px 30px;
-    background-color: rgba(20, 20, 20, 0.95); /* Fondo oscuro para que se lean los links */
-    border-bottom: 3px solid #ff4500; /* Línea corporativa naranja */
-    position: relative; /* Mantiene el menú en el flujo normal */
-    z-index: 1000;
+    background-color: rgba(20, 20, 20, 0.95); 
+    border-bottom: 3px solid #ff4500; 
+    z-index: 1000;      /* Se asegura de estar SIEMPRE por encima de la foto */
 }
 
 .logo {
