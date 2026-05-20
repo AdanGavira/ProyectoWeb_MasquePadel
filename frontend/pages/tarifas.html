@@ -10,16 +10,42 @@
     <link rel="stylesheet" href="../css/responsive.css">
     <script src="../js/menu.js"></script>
     <style>
-        /* Estilos rápidos embebidos para asegurar que la tabla se vea profesional */
-        .cuadro1 { max-width: 800px; margin: 50px auto; padding: 20px; background: #fff; box-shadow: 0 4px 15px rgba(0,0,0,0.1); border-radius: 8px; text-align: center;}
-        .tabla-precios { width: 100%; border-collapse: collapse; margin-top: 20px; }
-        .tabla-precios th { background-color: #1a1a1a; color: white; padding: 15px; }
-        .tabla-precios td { padding: 15px; border-bottom: 1px solid #ddd; }
-        .tabla-precios tr:hover { background-color: #f9f9f9; }
-        .descuentos { margin-top: 30px; font-weight: bold; }
-        .info-puntos-clases { text-align: left; margin: 0 auto; max-width: 600px; line-height: 1.8; }
-        .info-puntos-clases li { margin-bottom: 10px; }
-        h1, h2 { color: #ff4500; }
+        /* Diseño principal de las tarjetas (cuadro1) */
+        .cuadro1 { 
+            max-width: 800px; 
+            margin: 50px auto; 
+            padding: 40px; 
+            background: #fff; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
+            border-radius: 8px; 
+            text-align: center;
+        }
+
+        .cuadro1 h2 { color: #ff4500; font-size: 28px; margin-bottom: 25px; text-transform: uppercase;}
+
+        /* Lista de servicios */
+        .info-puntos-clases { 
+            text-align: left; 
+            margin: 0 auto; 
+            max-width: 500px; 
+            line-height: 2; /* Separa un poco más cada línea */
+            list-style: none; /* Quitamos los puntos por defecto de HTML */
+            padding-left: 0;
+            font-size: 1.1rem;
+            color: #444;
+        }
+
+        .info-puntos-clases li { 
+            margin-bottom: 15px; 
+            display: flex; /* Esto es CLAVE para que los iconos no se amontonen */
+            align-items: center; 
+            gap: 15px; /* Espacio fijo entre el icono y el texto */
+        }
+
+        /* Hacemos los emojis un poquito más grandes */
+        .icono-servicio {
+            font-size: 1.5rem;
+        }
     </style>
 </head>
 <body id="tarifas">
@@ -104,14 +130,15 @@
 
         <div class="cuadro1" style="margin-top: 30px; margin-bottom: 60px;">
             <h2>Servicios de la Escuela</h2>
+
             <ul class="info-puntos-clases">
-                <li>🎾 Escuela de iniciación y competición</li>
-                <li>💪 Preparación física, Coach deportivo y Asesoramiento Nutricional</li>
-                <li>🏅 Equipos federados (Femenino y Masculino)</li>
-                <li>🏆 Interclubs / Series Nacionales de Pádel (SNP)</li>
-                <li>Liga LAPI (Somos Club Sede Oficial)</li>
-                <li>Major League Pádel (Competición Mixta)</li>
-                <li>Cursos de formación específicos para monitores</li>
+                <li><span class="icono-servicio">🎾</span> Escuela de iniciación y competición</li>
+                <li><span class="icono-servicio">💪</span> Preparación física, Coach y Asesoramiento Nutricional</li>
+                <li><span class="icono-servicio">🏅</span> Equipos federados (Femenino y Masculino)</li>
+                <li><span class="icono-servicio">🏆</span> Interclubs / Series Nacionales de Pádel (SNP)</li>
+                <li><span class="icono-servicio">⚡</span> Liga LAPI (Somos Club Sede Oficial)</li>
+                <li><span class="icono-servicio">🔥</span> Major League Pádel (Competición Mixta)</li>
+                <li><span class="icono-servicio">🎯</span> Cursos de formación específicos para monitores</li>
             </ul>
         </div>
     </main>
