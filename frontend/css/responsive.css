@@ -158,8 +158,8 @@
     .navbar a {
         display: block;
         padding: 12px;
-        background-color: #333;
-        border-radius: 4px;
+        background-color: rgba(0, 0, 0, 0.8); /* Fondo semitransparente solo para móvil */
+        margin-bottom: 2px;
     }
 
     .btn-usuario a {
