@@ -426,62 +426,65 @@ form input {
 }
 
 /* =========================================
-   BARRA DE NAVEGACIÓN (TRANSPARENTE FIJA ARRIBA)
+   BARRA DE NAVEGACIÓN (ANCHO COMPLETO - FULL WIDTH)
    ========================================= */
-.menu.container {
-    position: absolute; /* Lo ancla arriba para que no caiga al medio */
+.menu {
+    position: absolute; 
     top: 0;             
     left: 0;
     width: 100%;
+    max-width: 100% !important; /* Fuerza a ignorar el límite de la clase container */
     box-sizing: border-box;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 30px 50px; /* Un poco de espacio para los márgenes superior y laterales */
+    padding: 35px 6%; /* El 6% de padding hace que se ajuste proporcional a la pantalla */
 
-    background: transparent; /* SIN FONDO */
-    border: none;            /* SIN LÍNEAS */
+    background: transparent; 
+    border: none;            
     z-index: 1000;
 }
 
 .logo {
-    font-size: 28px;
+    font-size: 32px; /* Un poco más grande para darle más cuerpo */
     font-weight: 800;
-    color: #ffffff; /* Letras blancas puras */
+    color: #ffffff;
     text-decoration: none;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
 }
 
-/* Enlaces del menú del PC */
 .navbar ul {
     list-style: none;
     display: flex;
     align-items: center;
-    gap: 30px;
+    gap: 40px; /* Al estirar la pantalla podemos separar más los enlaces */
     margin: 0;
     padding: 0;
 }
 
 .navbar a {
-    color: #ffffff; /* Letras blancas puras */
+    color: #ffffff;
     text-decoration: none;
-    font-size: 16px;
-    font-weight: 600; /* Un poco más de grosor para que resalte sobre las fotos */
-    text-transform: uppercase; /* Queda muy bien visualmente sin fondo */
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
     transition: color 0.3s ease;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.3); /* Sombra sutil para que se lean mejor sobre fotos claras */
 }
 
-/* Efecto suave al pasar el ratón */
+/* Efecto hover (puedes ponerle el naranja o azul corporativo) */
 .navbar a:hover {
-    color: #00bfff; /* O el color azul corporativo que estás usando en la web */
+    color: #ff4500; 
 }
 
-/* Opcional: Si quieres que el último botón de perfil sí tenga estilo de botón */
+/* Botón de Perfil */
 .btn-usuario a {
     border: 2px solid #ffffff;
-    padding: 8px 15px;
+    padding: 10px 22px;
     border-radius: 4px;
+    font-weight: bold;
 }
 .btn-usuario a:hover {
     background-color: #ffffff;
