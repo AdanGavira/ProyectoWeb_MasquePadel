@@ -3,121 +3,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MasquePadel-Tarifas</title>
-    <meta name="description" content="Club de padel en Sevilla">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/tarifas.css">
-    <link rel="stylesheet" href="css/responsive.css">
-    <script src="js/menu.js"></script>
+    <title>MasquePadel - Tarifas y Escuela</title>
+    <meta name="description" content="Tarifas y escuela del Club de padel en Sevilla">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/tarifas.css"> <!-- Asegúrate de tener este archivo CSS o meter este CSS en style.css -->
+    <link rel="stylesheet" href="../css/responsive.css">
+    <script src="../js/menu.js"></script>
+    <style>
+        /* Estilos rápidos embebidos para asegurar que la tabla se vea profesional */
+        .cuadro1 { max-width: 800px; margin: 50px auto; padding: 20px; background: #fff; box-shadow: 0 4px 15px rgba(0,0,0,0.1); border-radius: 8px; text-align: center;}
+        .tabla-precios { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        .tabla-precios th { background-color: #1a1a1a; color: white; padding: 15px; }
+        .tabla-precios td { padding: 15px; border-bottom: 1px solid #ddd; }
+        .tabla-precios tr:hover { background-color: #f9f9f9; }
+        .descuentos { margin-top: 30px; font-weight: bold; }
+        .info-puntos-clases { text-align: left; margin: 0 auto; max-width: 600px; line-height: 1.8; }
+        .info-puntos-clases li { margin-bottom: 10px; }
+        h1, h2 { color: #ff4500; }
+    </style>
 </head>
 <body id="tarifas">
-    <header class="tarifas">
+
+    <!-- EL MENÚ GLOBAL ANCHO COMPLETO -->
+    <header class="tarifas"> <!-- Esta clase asume que en tu style.css le has puesto una imagen de fondo -->
         <div class="overlay">
             <div class="menu">
                 <div>
                     <a href="../index.html" class="logo">MasquePadel</a>
                 </div>
-
                 <button onclick="myFunction()" class="menu-responsive">&#9776;</button> 
 
                 <nav id="mi-menu" class="navbar">
                     <ul>
                         <li><a href="../index.html">Inicio</a></li>
-                        <li><a href="../instalaciones.html">Instalaciones</a></li>
-                        <li><a href="../reservas.html">Reserva Pistas</a></li>
-                        <li><a href="../shop/productos.html">Productos</a></li>
-                        <li><a href="../galeria.html">Galería</a></li>
-                        <li><a href="../contacto.html">Contacto</a></li>
-
-                        <li class="btn-usuario">
-                            <a href="#">Iniciar Sesión</a>
-                        </li>
+                        <li><a href="instalaciones.html">Instalaciones</a></li>
+                        <li><a href="tarifas.html">Tarifas</a></li>
+                        <li><a href="reservas.html">Reservas</a></li>
+                        <li><a href="../shop/productos.html">Tienda</a></li>
+                        <li><a href="galeria.html">Galería</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                        <li class="btn-usuario"><a href="#">Iniciar Sesión</a></li>
                     </ul>
                 </nav>
             </div>
 
             <div class="header-content container">
-
                 <div class="header-txt">
-                    <h1>Tarifas</h1>
+                    <h1 style="color: white;">Tarifas y Escuela</h1>
                 </div>
             </div>
         </div>
     </header>
 
-    <div class="cuadro1">
-        <table class="tabla-precios">
-            <h2>Escuela de pádel</h2>
-            <h1>MasquePadel 2024-25</h1>
-            <tr>
-                <th></th>
-                <th>1 día/semana</th>
-                <th>2 días/semana</th>
-            </tr>
-            <tr>
-                <td>Escuela Mañanas Exterior</td>
-                <td>25€</td>
-                <td>40€</td>
-            </tr>
-            <tr>
-                <td>Escuela Tardes Exterior</td>
-                <td>35€</td>
-                <td>60€</td>
-            </tr>
-            <tr>
-                <td>Escuela Infantil (hasta 8 años)</td>
-                <td>30€</td>
-                <td>55€</td>
-            </tr>
-            <tr>
-                <td>Escuela de Pádel</td>
-                <td>45€</td>
-                <td>80€</td>
-            </tr>
-        </table>
+    <!-- CONTENIDO DE TARIFAS -->
+    <main class="container">
+        <div class="cuadro1">
+            <h2>Escuela de Pádel</h2>
+            <h1 style="color: #333;">Temporada 2024-25</h1>
 
-        <h3>Descuentos especiales para abonad@s del Club</h3>
-        <h3 style="color: #27A4F2;">Descuentos para integrantes de 
-            equipos de competición del club</h3>
-        <p>MATRÍCULA DE INSCRIPCIÓN: 10€</p>
-        <p>(Entrega de camiseta)</p>
-    </div>
+            <table class="tabla-precios">
+                <thead>
+                    <tr>
+                        <th>Modalidad</th>
+                        <th>1 día/semana</th>
+                        <th>2 días/semana</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Escuela Mañanas Exterior</td>
+                        <td>25€ / mes</td>
+                        <td>40€ / mes</td>
+                    </tr>
+                    <tr>
+                        <td>Escuela Tardes Exterior</td>
+                        <td>35€ / mes</td>
+                        <td>60€ / mes</td>
+                    </tr>
+                    <tr>
+                        <td>Escuela Infantil (hasta 8 años)</td>
+                        <td>30€ / mes</td>
+                        <td>55€ / mes</td>
+                    </tr>
+                    <tr>
+                        <td>Escuela de Pádel (Adultos)</td>
+                        <td>45€ / mes</td>
+                        <td>80€ / mes</td>
+                    </tr>
+                </tbody>
+            </table>
 
-    <div class="container puntos-clase">
-        <h3>Servicios de la escuela</h3>
-        <ul class="info-puntos-clases">
-            <li>Escuela de iniciación a competición</li>
-            <li>Preparción física/Asesoramiento y Coach
-                en competición/Asesoramiento nutrición</li>
-            <li>Equipos federados (Femenino y Masculino)</li>
-            <li>Interclubs/Series Nacionales de Pádel (SNP)</li>
-            <li>Liga LAPI (Club Sede de la Competición)</li>
-            <li>Major League Pádel (Competición Mixta)</li>
-            <li>Entrenamientos</li>
-            <li>Liga Interna</li>
-            <li>Cursos de formación para monitores</li>
-        </ul>
-    </div>
-    <footer class="footer container">
-
-        <h2>Contáctanos</h2>
-
-        <form>
-            <input class="campo" type="text" placeholder="Nombre (obligatorio)" required >
-            <input class="campo" type="text" placeholder="Apellidos (obligatorio)" required><br>
-            <input class="campo" type="tel" placeholder="Teléfono">
-            <input class="campo" type="email" placeholder="email (obligatorio)" required><br>
-            <input type="checkbox" id="aceptar" name="aceptar" value="Acepta la política de privacidad" required>
-            <label for="aceptar" >Acepto la política de privacidad</label><br>
-            <input class="btn-2" type="submit" value="Enviar">
-        </form>
-        <div class="footer-txt">
-            <p>Dirección - teléfono - redes sociales - <a href="mailto:masquepadel@masquepadel.com">email</a>
-            </p>
-            <p>Facebook - <a href="instagram" target="_blank">Instagram</a></p>
+            <div class="descuentos">
+                <p>💸 Descuentos especiales para abonad@s del Club</p>
+                <p style="color: #27A4F2;">🏆 Descuentos para integrantes de equipos de competición</p>
+                <p style="margin-top: 15px; font-size: 0.9em; color:#666;">
+                    MATRÍCULA DE INSCRIPCIÓN: 10€ <br>(Incluye entrega de camiseta técnica)
+                </p>
+            </div>
         </div>
 
-    </footer>
+        <div class="cuadro1" style="margin-top: 30px; margin-bottom: 60px;">
+            <h2>Servicios de la Escuela</h2>
+            <ul class="info-puntos-clases">
+                <li>🎾 Escuela de iniciación y competición</li>
+                <li>💪 Preparación física, Coach deportivo y Asesoramiento Nutricional</li>
+                <li>🏅 Equipos federados (Femenino y Masculino)</li>
+                <li>🏆 Interclubs / Series Nacionales de Pádel (SNP)</li>
+                <li>Liga LAPI (Somos Club Sede Oficial)</li>
+                <li>Major League Pádel (Competición Mixta)</li>
+                <li>Cursos de formación específicos para monitores</li>
+            </ul>
+        </div>
+    </main>
 
+    <!-- FOOTER LIMPIO -->
+    <footer class="footer">
+        <div class="container footer-txt" style="text-align: center; padding: 30px 0;">
+            <h2>MasquePadel Sevilla</h2>
+            <p>Email: <a href="mailto:masquepadel@masquepadel.com">masquepadel@masquepadel.com</a></p>
+        </div>
+    </footer>
 </body>
 </html>
