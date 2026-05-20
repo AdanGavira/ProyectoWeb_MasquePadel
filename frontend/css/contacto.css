@@ -1,31 +1,77 @@
-header.contacto{
-    background-image: url(../images/img/foto-contacto-fondo.jpg); /*imagen del encabezado*/
+header.contacto {
+    background-image: url(../images/img/foto-contacto-fondo.jpg);
     background-position: center bottom;
     background-repeat: no-repeat;
-    background-size: cover; /*cubrir todo el fondo*/
+    background-size: cover;
 }
 
-.contacto-txt{
-    background-color: #000000;
+/* Nuevo Flexbox para dividir Formulario e Información */
+.contacto-contenedor {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin: 50px auto 100px auto;
+    justify-content: space-between;
+}
+
+.contacto-txt {
+    background-color: #222222; /* Un gris oscuro más elegante que el #000000 puro */
     color: #FFFFFF;
     padding: 40px;
-    float: left; /*posición a la izquierda*/
-    margin-top: 50px;
+    flex: 1; /* Ocupa el espacio disponible equitativamente */
+    min-width: 300px;
+    border-radius: 8px; /* Bordes suaves */
 }
 
-.contacto-txt ul{
+.contacto-txt ul {
+    list-style: none; /* Quita los puntos viñeta por defecto */
+    padding: 0;
+}
+
+.contacto-txt li {
     margin-bottom: 10px;
+    font-size: 16px;
 }
 
-.contacto-txt li{
-    margin-top: 10px;
+.contacto-txt li a {
+    color: #ff4500;
+    text-decoration: none;
 }
 
-.tabla-contacto{
-    background-color: orangered;
+.tabla-contacto {
+    background-color: #ff4500; /* Naranja rojizo deportivo (orangered) */
     padding: 40px;
-    margin: 0 auto;
-    float: right; /*posición a la derecha*/
-    margin-bottom: 100px;
-    margin-top: 50px;
+    flex: 1;
+    min-width: 300px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
+}
+
+.tabla-contacto form .campo {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+}
+
+.checkbox-container {
+    margin: 20px 0;
+    color: white;
+}
+
+.btn-2 {
+    background-color: #111;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: bold;
+    width: 100%;
+    transition: 0.3s ease;
+}
+
+.btn-2:hover {
+    background-color: #333;
 }
